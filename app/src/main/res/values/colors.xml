@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#C1CC65</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="light_gray">#D3D3D3</color><!--亮灰色 -->
+    <color name="gray">#808080</color><!--灰色 -->
+    <color name="snow">#FFFAFA</color><!--雪白色 -->
+    <color name="silver">#C0C0C0</color><!--银色 -->
+    <color name="mediumaquamarine">#66CDAA</color><!--中绿色 -->
+    <color name="black">#000000</color><!--黑色 -->
+    <color name="white">#ffffff</color>
+    <color name="hint">#999999</color>
+    <color name="main_green">#ABC236</color>
+    <color name="four_black">#44000000</color>
+    <color name="black_v2">#747575</color>
+    <color name="lightskyblue">#87CEFA</color><!--亮天蓝色 -->
+    <color name="skyblue">#87CEEB</color><!--天蓝色 -->
+</resources>

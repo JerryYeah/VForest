@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.vforest.yeah.vforest.activity.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/desc_edit"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:gravity="top|start"
+            android:background="#00000000"
+            android:hint="此刻的想法......"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint"
+            android:padding="5dp"
+            android:textSize="14sp"
+            android:maxLines="5"/>
+
+        <View style="@style/horizontal_divider" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+        <ImageView
+            android:id="@+id/add_pic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/camera"
+            android:scaleType="centerCrop"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_img_1"
+            android:src="@null"
+            android:scaleType="centerCrop"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_img_2"
+            android:src="@null"
+            android:scaleType="centerCrop"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_img_3"
+            android:src="@null"
+            android:scaleType="centerCrop"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/layout_upload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_gravity="bottom"
+        android:background="#ccE6BF66">
+        <Button
+            android:id="@+id/upload"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/main_green"
+            android:text="上传"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+    </FrameLayout>
+
+    <!-- 拍照、选择本地图片的底部悬浮菜单 -->
+    <FrameLayout
+        android:id="@+id/edit_photo_fullscreen_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#55000000"
+        android:clickable="true"
+        android:layout_gravity="bottom"
+        android:focusable="true"
+        android:visibility="gone" >
+
+        <RelativeLayout
+            android:id="@+id/edit_photo_outer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:layout_gravity="bottom"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/edit_photo_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/take_picture_layout_round_corner_bg"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/take_picture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="拍照"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <View style="@style/horizontal_divider" >
+                </View>
+
+                <TextView
+                    android:id="@+id/select_local_picture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="选取本地照片"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_photo_layout"
+                android:layout_margin="10dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/cancel_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/take_picture_layout_round_corner_bg"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="取消"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </FrameLayout>
+
+    <!-- 点开已添加的图片查看大图 -->
+    <LinearLayout
+        android:id="@+id/display_big_image_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/black"
+        android:visibility="gone" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@color/black_v2">
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/btn_back"
+                android:scaleType="centerInside"
+                android:layout_centerInParent="true"
+                android:layout_margin="10dp"
+                android:background="@color/black_v2" />
+            <TextView
+                android:id="@+id/edit_pages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="1/1"
+                android:textColor="#ffffff"
+                android:textSize="20sp"/>
+
+            <ImageButton
+                android:id="@+id/btn_delete"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/btn_delete"
+                android:scaleType="centerInside"
+                android:layout_centerInParent="true"
+                android:layout_margin="10dp"
+                android:background="@color/black_v2" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

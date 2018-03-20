@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@color/black_v2">
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/btn_back"
+            android:scaleType="centerInside"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"
+            android:background="@color/black_v2" />
+        <TextView
+            android:id="@+id/edit_pages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="1/1"
+            android:textColor="#ffffff"
+            android:textSize="20sp"/>
+
+        <ImageButton
+            android:id="@+id/btn_delete"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/btn_delete"
+            android:scaleType="centerInside"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"
+            android:background="@color/black_v2" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/add_wetland_dialog_layout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="afterDescendants"
+    android:layout_margin="20dp">
+    <EditText
+        android:id="@+id/device_num"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:textSize="16dp"
+        android:hint="请输入传感器序列号"
+        android:maxLines="1"
+        android:background="@drawable/bg_edit"/>
+
+    <EditText
+        android:id="@+id/wetland_name"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:textSize="16dp"
+        android:hint="为湿地取个名字吧"
+        android:maxLines="1"
+        android:background="@drawable/bg_edit"/>
+</LinearLayout>

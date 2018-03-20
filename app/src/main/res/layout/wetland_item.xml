@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/wetland_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="名称"
+        android:gravity="center_horizontal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/temperature_icon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/temperature"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:layout_toRightOf="@+id/temperature_icon"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/temperature"
+                    android:layout_centerInParent="true"
+                    android:textSize="13sp"
+                    android:maxLines="1"
+                    android:text="温度"/>
+                <TextView
+                    android:id="@+id/temperature_data"
+                    android:text="26℃"
+                    android:textSize="19sp"
+                    android:layout_marginTop="3dp"
+                    android:maxLines="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/humidity_icon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/humidity"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:layout_toRightOf="@+id/humidity_icon"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/humidity"
+                    android:layout_centerInParent="true"
+                    android:textSize="13sp"
+                    android:maxLines="1"
+                    android:text="湿度"/>
+                <TextView
+                    android:id="@+id/humidity_data"
+                    android:text="63%"
+                    android:textSize="19sp"
+                    android:layout_marginTop="3dp"
+                    android:maxLines="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/illumination_icon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/illumination"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:layout_toRightOf="@+id/illumination_icon"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/illumination"
+                    android:layout_centerInParent="true"
+                    android:textSize="13sp"
+                    android:maxLines="1"
+                    android:text="光强"/>
+                <TextView
+                    android:id="@+id/illumination_data"
+                    android:text="450Lx"
+                    android:textSize="19sp"
+                    android:layout_marginTop="3dp"
+                    android:maxLines="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

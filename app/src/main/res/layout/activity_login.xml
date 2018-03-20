@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    tools:context="com.vforest.yeah.vforest.activity.LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/login_center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="50dp">
+
+        <EditText
+            android:id="@+id/login_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="用户名"
+            android:maxLines="1"
+            android:textColor="#808a87"
+            android:paddingBottom="10dp" />
+        <View
+            android:id="@+id/view111"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#abc236"/>
+        <EditText
+            android:id="@+id/login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="密码"
+            android:maxLines="1"
+            android:textColor="#808a87"
+            android:paddingBottom="10dp"/>
+        <View
+            android:id="@+id/view112"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#abc236"/>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_below="@id/view112"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/loginbtn"
+            android:layout_gravity="top|center_horizontal"
+            android:text="登 录"
+            android:textSize="20sp"
+            android:textColor="#ffffff"/>
+
+        <TextView
+            android:id="@+id/btn_newuser"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="新用户注册"
+            android:textSize="14sp"
+            android:textColor="#abc" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="skip"/>
+
+</RelativeLayout>

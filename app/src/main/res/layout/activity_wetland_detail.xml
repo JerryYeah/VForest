@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightskyblue">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/lightskyblue">
+        <ImageButton
+            android:id="@+id/btn_back_wt"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/btn_back"
+            android:scaleType="centerInside"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"
+            android:background="@color/lightskyblue" />
+        <TextView
+            android:id="@+id/wt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="湿地1"
+            android:textColor="#ffffff"
+            android:textSize="22sp"/>
+
+        <ImageButton
+            android:id="@+id/btn_delete_wt"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/btn_delete"
+            android:scaleType="centerInside"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"
+            android:background="@color/lightskyblue" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_margin="20dp">
+        <ImageView
+            android:id="@+id/inner_temp_iv"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/color_temp"/>
+        <LinearLayout
+            android:id="@+id/temp_layout"
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_toRightOf="@+id/inner_temp_iv"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/temp_label"
+                android:layout_centerInParent="true"
+                android:textSize="13sp"
+                android:maxLines="1"
+                android:text="温度"/>
+            <TextView
+                android:id="@+id/temp_data"
+                android:text="26℃"
+                android:textSize="19sp"
+                android:layout_marginTop="3dp"
+                android:maxLines="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/temperature_extra"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="环境温度适宜"
+            android:gravity="right"
+            android:lines="2"
+            android:textSize="17sp"
+            android:maxLines="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+        <ImageView
+            android:id="@+id/inner_humi_iv"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/color_humi"/>
+        <LinearLayout
+            android:id="@+id/humi_layout"
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_toRightOf="@+id/inner_humi_iv"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/humi_label"
+                android:layout_centerInParent="true"
+                android:textSize="13sp"
+                android:maxLines="1"
+                android:text="湿度"/>
+            <TextView
+                android:id="@+id/humi_data"
+                android:text="60%"
+                android:textSize="19sp"
+                android:layout_marginTop="3dp"
+                android:maxLines="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/humidity_extra"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/humi_layout"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="环境湿度适宜"
+            android:gravity="right"
+            android:lines="2"
+            android:textSize="17sp"
+            android:maxLines="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+        <ImageView
+            android:id="@+id/inner_illum_iv"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/color_illum"/>
+        <LinearLayout
+            android:id="@+id/illum_layout"
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_toRightOf="@+id/inner_illum_iv"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/illum_label"
+                android:layout_centerInParent="true"
+                android:textSize="13sp"
+                android:maxLines="1"
+                android:text="光照"/>
+            <TextView
+                android:id="@+id/illum_data"
+                android:text="3500Lx"
+                android:textSize="19sp"
+                android:layout_marginTop="3dp"
+                android:maxLines="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/illumination_extra"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="光照强度适宜"
+            android:gravity="right"
+            android:lines="2"
+            android:textSize="17sp"
+            android:maxLines="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/comments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="26dp"
+        android:text="植物生长环境良好，继续保持哦"
+        android:textSize="18dp"
+        android:gravity="left"/>
+
+
+
+
+
+
+</LinearLayout>
