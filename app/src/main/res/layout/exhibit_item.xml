@@ -9,7 +9,7 @@
         android:text="小猫"
         android:textSize="18sp"
         android:textColor="@color/lightskyblue"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginLeft="11dp"/>
 
     <TextView

@@ -17,4 +17,7 @@
     <color name="black_v2">#747575</color>
     <color name="lightskyblue">#87CEFA</color><!--亮天蓝色 -->
     <color name="skyblue">#87CEEB</color><!--天蓝色 -->
+    <color name="darkolivegreen">#556B2F</color><!--暗橄榄绿 -->
+    <color name="darkblue">#00008B</color><!--暗蓝色 -->
+    <color name="aa_black">#aa000000</color>
 </resources>

@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewParent;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -88,6 +89,10 @@ public class WetlandFragment extends BaseFragment implements SwipeRefreshLayout.
         add.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                ViewParent vp = layout.getParent();
+                if(vp instanceof ViewGroup){
+                    ((ViewGroup)vp).removeAllViews();
+                }
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setTitle("添加湿地");
                 builder.setView(layout);
@@ -189,7 +194,6 @@ public class WetlandFragment extends BaseFragment implements SwipeRefreshLayout.
                                 try {
                                     JSONObject res = new JSONObject(responseText);
                                     JSONArray list = res.getJSONArray("contents");
-                                    Log.d("!!!!!!!!!!!", "initWetlands: " + list.length());
                                     for (int i = 0; i < list.length(); i++) {
                                         JSONObject wetland = list.getJSONObject(i);
                                         String name = wetland.getString("name");
