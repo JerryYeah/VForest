@@ -1,12 +1,15 @@
 package com.vforest.yeah.vforest.fragment;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
+import android.text.format.Time;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +17,7 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -166,6 +170,7 @@ public class WetlandFragment extends BaseFragment implements SwipeRefreshLayout.
                 startActivity(i);
             }
         });
+        indicateDate();
     }
 
     private void  initWetlands(){
@@ -235,6 +240,91 @@ public class WetlandFragment extends BaseFragment implements SwipeRefreshLayout.
                         Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    private void indicateDate(){
+        final Time t = new Time();
+        t.setToNow();
+        SharedPreferences pre = mActivity.getSharedPreferences("checkValue", Context.MODE_PRIVATE);
+        String value = pre.getString("isChecked", "");
+        //判断接受到的信息
+        if(!value.endsWith("1")){            // 种植提示
+            View layout = LayoutInflater.from(mActivity).inflate(R.layout.advice_dialog, null);
+            final CheckBox cBox = (CheckBox)  layout.findViewById(R.id.check_advice);
+            AlertDialog.Builder builder = new AlertDialog.Builder(mActivity).setTitle("种植建议");
+            builder.setView(layout);
+            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    //将数据保存到sharedPerferences中：
+                    SharedPreferences pre = mActivity.getSharedPreferences("checkValue", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = pre.edit();
+                    //判断cBox是否被选中
+                    if (cBox.isChecked()) {
+                        editor.putString("isChecked", "1");
+                    }else {
+                        editor.putString("isChecked", "0");
+                    }
+                    //提交选择的check,并且保存在pre中
+                    editor.commit();
+                }
+            });
+            if(t.month == 3 && t.monthDay >= 1 && t.monthDay <= 15){
+                builder.setMessage("4月1日-15日是适合种植葛根的时间段，记得按时播种哦");
+                AlertDialog dialog = builder.create();
+                dialog.setCancelable(false);
+                dialog.show();
+                dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
+            }
+        }
+
+        SharedPreferences pre1 = mActivity.getSharedPreferences("confirm", Context.MODE_PRIVATE);
+        String value1 = pre1.getString("isConfirmed", "");
+        int date = pre1.getInt("day",1);
+        boolean a, b;
+        a= (t.monthDay - date) % 3 ==0;
+        b= (t.monthDay - date) % 10 ==0;
+        if(value1.equals("yes")&&(a||b)){                   //   养护提示，确认已种植且是提醒日期
+            SharedPreferences pre2 = mActivity.getSharedPreferences("todayValue", Context.MODE_PRIVATE);
+            String value2 = pre2.getString("isChecked","");
+            int month = pre2.getInt("month", 0);
+            int day = pre2.getInt("day", 0);
+            if(!value2.endsWith("1")||(month != t.month || day!= t.monthDay)){   // 是否今日不再提示
+                StringBuffer sb = new StringBuffer("");
+                if(a)
+                    sb.append("今天该为植物浇水了哦");
+                if(b)
+                    sb.append(" 今天要施肥｀・ω・");
+                AlertDialog.Builder builder = new AlertDialog.Builder(mActivity).setTitle("种植建议");
+                View layout = LayoutInflater.from(mActivity).inflate(R.layout.advice_dialog, null);
+                final CheckBox cBox = (CheckBox)  layout.findViewById(R.id.check_advice);
+                builder.setView(layout);
+                cBox.setText("今日不再提醒");
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        SharedPreferences pre = mActivity.getSharedPreferences("todayValue", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = pre.edit();
+                        //判断cBox是否被选中
+                        if (cBox.isChecked()) {
+                            editor.putString("isChecked", "1");
+                            editor.putInt("month", t.month);
+                            editor.putInt("day", t.monthDay);
+                        }else {
+                            editor.putString("isChecked", "0");
+                        }
+                        //提交选择的check,并且保存在pre中
+                        editor.commit();
+                    }
+                });
+                builder.setMessage(sb.toString());
+                AlertDialog dialog = builder.create();
+                dialog.setCancelable(false);
+                dialog.show();
+                dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.BLACK);
+            }
+        }
+
     }
 
 

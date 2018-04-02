@@ -12,6 +12,7 @@ import com.vforest.yeah.vforest.R;
 
 import com.vforest.yeah.vforest.fragment.BaseFragment;
 import com.vforest.yeah.vforest.fragment.CommunityFragment;
+import com.vforest.yeah.vforest.fragment.MyselfFragment;
 import com.vforest.yeah.vforest.fragment.WetlandFragment;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -56,8 +57,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             fragmentGroup[0]=(BaseFragment) fragment;
         if(fragmentGroup[1]==null&&fragment instanceof CommunityFragment)
             fragmentGroup[1]=(BaseFragment) fragment;
-        /*if(fragmentGroup[2]==null&&fragment instanceof yuepaiFragment)
-            fragmentGroup[2]=(BaseFragment) fragment;*/
+        if(fragmentGroup[2]==null&&fragment instanceof MyselfFragment)
+            fragmentGroup[2]=(BaseFragment) fragment;
     }
 
     private void initView(){
@@ -115,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 else if(1==i)
                     fragmentGroup[i]=new CommunityFragment();
                 else
-                    fragmentGroup[i]=new CommunityFragment();
+                    fragmentGroup[i]=new MyselfFragment();
 
                 fragmentTransaction.add(R.id.fragmentlayout_content,fragmentGroup[i],a[i]);
             }
